@@ -1,0 +1,2 @@
+This is the library jqmath, from the source:
+https://mathscribe.com/author/jqmath.html

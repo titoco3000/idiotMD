@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMD</title>
+    <script type="module" src="/main.js" defer></script>
+    <!-- <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        skipStartupTypeset: true // skip automatic rendering on page load
+      });
+    </script> -->
+
+    <link rel="stylesheet" href="./mathscribe/jqmath-0.4.3.css">
+    
+    <script src="./mathscribe/jquery-1.4.3.min.js"></script>
+    <script src="./mathscribe/jqmath-etc-0.4.6.min.js" charset="utf-8"></script>
+    
+  </head>
+
+  <body>
+    <nav>
+      <button><span>File</span>
+        <ul>
+          <li>Open</li>
+          <li>Save</li>
+        </ul>
+        <!-- <div>
+          <button>Open</button>
+          <button>Save</button>
+        </div> -->
+      </button>
+      <button>
+        <span>About</span>
+        <div class="about">
+          <p>
+            The danger of beeing a developer is coming to the "fine, I'll do it myself" moment. Thats how this program was born.
+          </p>
+          <p>By Tito Guidotti</p>
+          <p>
+            Version 0.1
+          </p>
+        </div>
+      </button>
+    </nav>
+    <div class="container">
+      <textarea id="main-input" name="main-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+      <label for="main-input" id="result"></label>
+    </div>
+  </body>
+</html>

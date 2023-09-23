@@ -1,0 +1,89 @@
+*{
+  box-sizing: border-box;
+  color: white;
+}
+
+nav{
+  background-color: #1C2128;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: none; /*flex*/
+  flex-direction: row;
+  align-items: stretch;
+}
+
+nav button{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  font-size: 12px;
+  padding: 1px 8px 1px 8px;
+  color: rgb(226, 226, 226);
+  position: relative;
+}
+
+nav button:hover{
+  background-color: #2b323b;
+}
+
+nav button > :nth-child(2){
+  display: none;
+  border: 1px solid #4a4a4a;
+  position: absolute;
+  left: 0px;
+  top: 18px;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.about{
+  width: 200px;
+}
+
+nav button:focus > :nth-child(2){
+  display: block;
+}
+
+nav button > :nth-child(2) > *{
+  padding: 1px 8px;
+}
+
+
+:root {
+  background-color: #393939;
+}
+body{
+  margin: 0;
+  overflow: hidden;
+}
+.container{
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 100vh
+}
+textarea{
+  background-color: #2f2f2f;
+  resize: none;
+  padding: 5px;
+  border: 0;
+  flex: 0 0 calc(50% - 0.5px);
+}
+textarea:focus{
+  outline:0;
+}
+#result{
+  flex: 0 0 calc(50% - 0.5px);
+  background-color: #2f2f2f;
+  width: 50%;
+  padding: 5px;
+}
+
+#result > *:first-child{
+  margin-top: 0;
+}
