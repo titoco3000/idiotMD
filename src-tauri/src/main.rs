@@ -139,25 +139,28 @@ fn newfile(
 }
 
 fn configure_webview_shortcuts(app: &tauri::AppHandle) {
-    use windows::core::Interface;
-    for (_, window) in app.windows().into_iter() {
-        window
-            .with_webview(|webview| unsafe {
-                let core_webview: webview2_com::Microsoft::Web::WebView2::Win32::ICoreWebView2 =
-                    webview
-                        .controller()
-                        .CoreWebView2()
+    #[cfg(target_os = "windows")]
+    {
+        use windows::core::Interface;
+        for (_, window) in app.windows().into_iter() {
+            window
+                .with_webview(|webview| unsafe {
+                    let core_webview: webview2_com::Microsoft::Web::WebView2::Win32::ICoreWebView2 =
+                        webview
+                            .controller()
+                            .CoreWebView2()
+                            .unwrap()
+                            .cast::<webview2_com::Microsoft::Web::WebView2::Win32::ICoreWebView2>()
+                            .unwrap();
+                    let settings = core_webview
+                        .Settings()
                         .unwrap()
-                        .cast::<webview2_com::Microsoft::Web::WebView2::Win32::ICoreWebView2>()
+                        .cast::<webview2_com::Microsoft::Web::WebView2::Win32::ICoreWebView2Settings3>()
                         .unwrap();
-                let settings = core_webview
-                    .Settings()
-                    .unwrap()
-                    .cast::<webview2_com::Microsoft::Web::WebView2::Win32::ICoreWebView2Settings3>()
-                    .unwrap();
-                settings.SetAreBrowserAcceleratorKeysEnabled(false).unwrap();
-            })
-            .unwrap();
+                    settings.SetAreBrowserAcceleratorKeysEnabled(false).unwrap();
+                })
+                .unwrap();
+        }
     }
 }
 
