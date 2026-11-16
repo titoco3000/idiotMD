@@ -1,8 +1,21 @@
 # Idiot Markdown
 
-A minimalistic editor for markdown files, made on the philosophy of "There's nothing simple enough on the market". 
+A minimal desktop Markdown editor, built on the idea that "there's nothing simple enough on the market".
 
-It has support for laTex math, separated by \$$ \$$.
+## Features
 
+- Distraction-free Markdown editing with preview
+- LaTeX math between `$$ ... $$` (rendered with jqMath)
+- Native desktop app with a Windows MSI installer
+
+## Stack
+
+Tauri (Rust), vanilla JavaScript, HTML, CSS.
+
+## Development
+
+```bash
 cargo install tauri-cli
 cargo tauri dev
+cargo tauri build
+```
